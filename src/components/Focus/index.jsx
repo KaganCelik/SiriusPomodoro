@@ -1,60 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { IoMdArrowDropdownCircle } from "react-icons/io";
+import Pomodoro from './Pomodoro';
+import Shortbreak from './ShortBreak';
+import Longbreak from './LongBreak';
 import './index.css';
 
 function Focus() {
+        const [selectedButton, setSelectedButton] = useState(1);
 
-        const [minutes, setMinutes] = useState(25);
-        const [seconds, setSeconds] = useState(0);
-        const [isActive, setIsActive] = useState(false);
-
-        const startTimer = () => {
-            setIsActive(true);
+        const handleClick = (onClick) => {
+            setSelectedButton(onClick);
         };
 
-        useEffect(() => {
-            let timer;
-
-            if(isActive) {
-                timer = setInterval(() => {
-                    if (seconds === 0) {
-                        if (minutes === 0) {
-                            clearInterval(timer);
-                            setIsActive(false);
-                            setMinutes(25);
-                            setSeconds(0);
-                        } else {
-                            setMinutes((prevMinutes) => prevMinutes - 1);
-                            setSeconds(59);
-                        }
-                    } else {
-                        setSeconds((prevSeconds) => prevSeconds - 1);
-                    }
-                }, 1000);
-            } else {
-                clearInterval(timer);
-            }
-            return() => clearInterval(timer);
-        }, [isActive, minutes, seconds]);
-
-
         return (
-        <div className='card-container'>
-            <div className='pomodoro-card'>
-                <div className='selection'>
-                    <button id='selection-btn' type='button'>POMODORO</button>
-                    <button id='selection-btn' type='button'>SHORT BREAK</button>
-                    <button id='selection-btn' type='button'>LONG BREAK</button>
-                </div>
-                <div className='bottom'>
-                    <p id='pomodoro-clock'>{minutes}:{seconds}</p>
-                    <button id='start-btn' type='button' onClick={startTimer}>START</button>
-                </div>
+        <div>
+            <div className='selector-button-container'>
+                <IoMdArrowDropdownCircle size={50} className='selector-button' onClick={() => handleClick(1)}/>
+                <IoMdArrowDropdownCircle size={50} className='selector-button' onClick={() => handleClick(2)}/>
+                <IoMdArrowDropdownCircle size={50} className='selector-button' onClick={() => handleClick(3)}/>
             </div>
-            <div className='task'>
-                <p className='task-title'>Enter Task</p>
-                <input className='task-input'></input>
-                <button id='task-btn' type='button'>ADD TASK</button>
-            </div>
+
+            {selectedButton === 1 && <Pomodoro />}
+            {selectedButton === 2 && <Shortbreak />}
+            {selectedButton === 3 && <Longbreak />}
         </div>
     )
 }

@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    background-color: #D9D9D9;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}

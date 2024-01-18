@@ -1,0 +1,50 @@
+.sidebar {
+    width: 170px;
+    height: 100vh;
+    background-color: #CB6CE6;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.arrow {
+    color: white;
+    display: flex;
+    margin-right: 15px;
+    align-self: flex-end;
+    margin-top: -35px;
+    margin-bottom: -30px;
+
+}
+
+.button {
+    font-size: 18px;
+    background-color: white;
+    height: 50px;
+    font-weight: bold;
+    margin-right: 15px;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    text-decoration: none;
+    color: #CB6CE6;
+    display: flex;
+    align-items: center;
+}
+
+.button:hover {
+    color: white;
+    background-color: black;
+    transition: all;
+    transition-duration: 0.5s;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
+
+.button p {
+    margin-left: 10px;
+}

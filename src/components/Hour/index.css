@@ -9,19 +9,23 @@
     border-radius: 30px;
 }
 
+.year-container {
+    color: white;
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+    margin-bottom: -90px
+}
+
+.year-container p {
+    margin-left: 5px;
+}
+
 .hour {
     margin: auto;
     margin-top: 65px;
     color: white;
     font-weight: bold;
-    font-size: 64px;
-}
-
-.utc-container {
-    margin: auto;
-}
-
-.utc {
-    color: white;
-    font-size: 18px;
+    font-size: 124px;
 }

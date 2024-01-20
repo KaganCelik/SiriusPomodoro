@@ -19,7 +19,6 @@ function Focus() {
                 <IoMdArrowDropdownCircle size={50} className='selector-button' onClick={() => handleClick(2)}/>
                 <IoMdArrowDropdownCircle size={50} className='selector-button' onClick={() => handleClick(3)}/>
             </div>
-
             {selectedButton === 1 && <Pomodoro />}
             {selectedButton === 2 && <Shortbreak />}
             {selectedButton === 3 && <Longbreak />}

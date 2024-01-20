@@ -51,11 +51,6 @@ function Shortbreak() {
                     <button id='start-btn' type='button' onClick={startTimer}>START</button>
                 </div>
             </div>
-            <div className='task'>
-                <p className='task-title'>Enter Task</p>
-                <input className='task-input'></input>
-                <button id='task-btn' type='button'>ADD TASK</button>
-            </div>
         </div>
     )
 }
